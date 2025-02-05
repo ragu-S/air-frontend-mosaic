@@ -55,7 +55,7 @@ const MasonryGrid = ({ assets, loadMore }) => {
 
   return <div className="grid-masonry" >
     {
-      resizedAssets.map(({ width, orgWidth, height, orgHeight, img }, index) => {
+      resizedAssets.map(({ width, height, img }, index) => {
         return <div className="grid-masonry-cells" style={{ width: `${width}px` }} key={index}>
             <img className="grid-masonry-img" src={img} width={width} height={height} />
           </div>
