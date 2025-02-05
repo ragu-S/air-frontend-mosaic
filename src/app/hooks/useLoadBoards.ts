@@ -6,7 +6,6 @@ export const useLoadBoards = () => {
   const [boards, setBoards] = useState([] as Board[]);
 
   useEffect(() => {
-    console.log("render load boards");
     fetchBoards().then((_boards: BoardsListResponse) => {
       setBoards(_boards?.data);
     });

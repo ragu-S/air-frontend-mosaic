@@ -1,0 +1,30 @@
+.boards {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+}
+
+.board-element {
+  width: 370px;
+  height: 370px;
+  margin: 0 20px 20px 0;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  z-index: 1;
+}
+
+img.board-img {
+  width: 370px;
+  height: 370px;
+  object-fit: cover;
+}
+
+.gradient {
+
+}

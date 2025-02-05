@@ -1,13 +1,15 @@
 'use client';
 import { useEffect, useState } from "react";
-import { Clip, ClipsListResponse, fetchAssets } from "@/app/api/clips";
+import { ClipsListResponse, fetchAssets } from "@/app/api/clips";
 
 export const useLoadAssets = ({ cursor }: { cursor: string | null }) => {
-  const [assets, setAssets] = useState({} as ClipsListResponse);
+  const [assets, setAssets] = useState(null as ClipsListResponse | null);
 
   useEffect(() => {
-    fetchAssets({ cursor }).then((_clips: ClipsListResponse) => {
-      setAssets(_clips);
+    fetchAssets({ cursor }).then((response: ClipsListResponse) => {
+      setAssets(prevAssets => {
+        return cursor ? ({ ...prevAssets, ...response, data: { clips: prevAssets.data.clips.concat(response.data.clips), total: response.data.total } }) : response
+      });
     });
   }, [cursor]);
 
