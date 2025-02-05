@@ -1,0 +1,34 @@
+.grid-masonry {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -20px; /* Adjustment for the gutter */
+  width: 100%;
+}
+
+.grid-masonry-cells {
+  flex: auto;
+  height: 370px;
+  min-width: 170px;
+  margin: 0 20px 20px 0;
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: white;
+}
+
+.abs-1 {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  background: white;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
